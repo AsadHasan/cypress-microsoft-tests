@@ -1,0 +1,47 @@
+{
+  "name": "cypress-microsoft-tests",
+  "version": "1.0.0",
+  "description": "Testing Microsoft's website with Cypress",
+  "scripts": {
+    "cypress:open": "cypress open",
+    "check": "prettier --check **/*.ts",
+    "fix-ts": "eslint --fix **/*.ts",
+    "test": "cypress run --record"
+  },
+  "keywords": [
+    "Cypress",
+    "Typescript",
+    "Browserstack"
+  ],
+  "author": "Asad Hasan",
+  "license": "MIT",
+  "devDependencies": {
+    "@typescript-eslint/eslint-plugin": "^4.8.2",
+    "@typescript-eslint/parser": "^4.8.2",
+    "axe-core": "^4.1.1",
+    "cypress": "^6.0.0",
+    "cypress-audit": "^0.2.3",
+    "cypress-axe": "^0.12.0",
+    "eslint": "^7.14.0",
+    "eslint-config-prettier": "^6.15.0",
+    "eslint-plugin-chai-friendly": "^0.6.0",
+    "eslint-plugin-cypress": "^2.11.2",
+    "eslint-plugin-mocha": "^8.0.0",
+    "eslint-plugin-prettier": "^3.1.4",
+    "husky": "^4.3.0",
+    "lint-staged": "^10.5.2",
+    "prettier": "^2.2.0",
+    "typescript": "^4.1.2"
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": "lint-staged"
+    }
+  },
+  "lint-staged": {
+    "*.ts": [
+      "eslint --fix",
+      "git add"
+    ]
+  }
+}
