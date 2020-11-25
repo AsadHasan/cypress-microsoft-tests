@@ -8,15 +8,15 @@ describe("Microsoft's homepage", () => {
       includedImpacts: ["critical"],
     });
   });
-  it("should pass the Lighthouse audits", function () {
-    cy.lighthouse({
-      performance: 15,
-      accessibility: 95,
-      "best-practices": 70,
-      seo: 80,
-      pwa: 25,
-    });
-  });
+  // it("should pass the Lighthouse audits", function () {
+  //   cy.lighthouse({
+  //     performance: 15,
+  //     accessibility: 95,
+  //     "best-practices": 70,
+  //     seo: 80,
+  //     pwa: 25,
+  //   });
+  // });
   it("should allow user option to buy Xbox items", () => {
     cy.contains("Buy Xbox games and consoles").click();
   });

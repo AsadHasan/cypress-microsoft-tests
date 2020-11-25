@@ -2,5 +2,6 @@ node_modules
 .dccache
 .vscode
 videos
+log
 
 
