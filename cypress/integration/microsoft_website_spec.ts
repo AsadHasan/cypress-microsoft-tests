@@ -31,13 +31,15 @@ describe("Microsoft's homepage", () => {
       it("should show list of consoles", () => {
         cy.get("[aria-label='xbox consoles']").children();
       });
-      it(
-        "should allow user option to pre-order xbox series x",
-        { browser: "!firefox" },
-        () => {
-          cy.contains("PRE-ORDER XBOX SERIES X").click();
-        }
-      );
+      it("should allow user option to buy Xbox Series S", () => {
+        cy.contains("Xbox Series S").click();
+      });
+
+      describe("XBOX Series S page", () => {
+        it("should give option to add item to wish list", () => {
+          cy.contains("Wish list");
+        });
+      });
     });
   });
 });
