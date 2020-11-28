@@ -3,7 +3,7 @@ jobs:
   cypress_local_tests:
     working_directory: ~/cypress-microsoft-tests
     docker:
-      - image: cimg/node:current
+      - image: cypress/included:6.0.0
     steps:
       - checkout
       - run:
