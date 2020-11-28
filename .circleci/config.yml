@@ -1,0 +1,18 @@
+version: 2.1
+jobs:
+  cypress_browserstack_tests:
+    working_directory: ~/cypress-microsoft-tests
+    docker:
+      - image: cimg/node
+    steps:
+      - checkout
+      - run:
+          name: Install Browserstack-cypress CLI
+          command: npm install -g browserstack-cypress-cli
+      - run:
+          name: Run Cypress tests on Browserstack
+          command: browserstack-cypress run
+workflows:
+  cypress-browserstack-tests:
+    jobs: 
+      - cypress_browserstack_tests
