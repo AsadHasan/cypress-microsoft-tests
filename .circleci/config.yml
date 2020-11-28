@@ -8,7 +8,7 @@ jobs:
       - checkout
       - run:
           name: Install Browserstack-cypress CLI
-          command: npm install -g browserstack-cypress-cli
+          command: sudo npm install -g browserstack-cypress-cli
       - run:
           name: Run Cypress tests on Browserstack
           command: browserstack-cypress run
