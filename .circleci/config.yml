@@ -3,7 +3,7 @@ jobs:
   cypress_browserstack_tests:
     working_directory: ~/cypress-microsoft-tests
     docker:
-      - image: cimg/node
+      - image: cimg/node:current
     steps:
       - checkout
       - run:
