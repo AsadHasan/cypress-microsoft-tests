@@ -6,7 +6,8 @@
     "cypress:open": "cypress open",
     "check": "prettier --check **/*.ts",
     "fix-ts": "eslint --fix **/*.ts",
-    "test": "cypress run --record"
+    "test": "cypress run --record",
+    "cross-browser-tests": "browserstack-cypress run"
   },
   "keywords": [
     "Cypress",

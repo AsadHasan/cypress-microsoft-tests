@@ -1,5 +1,17 @@
 version: 2.1
 jobs:
+  cypress_local_tests:
+    working_directory: ~/cypress-microsoft-tests
+    docker:
+      - image: cimg/node:current
+    steps:
+      - checkout
+      - run:
+          name: Install dependencies
+          command: npm install
+      - run:
+          name: Run Cypress tests
+          command: npm test
   cypress_browserstack_tests:
     working_directory: ~/cypress-microsoft-tests
     docker:
@@ -11,8 +23,11 @@ jobs:
           command: sudo npm install -g browserstack-cypress-cli
       - run:
           name: Run Cypress tests on Browserstack
-          command: browserstack-cypress run
+          command: npm run cross-browser-tests
 workflows:
   cypress-browserstack-tests:
     jobs: 
-      - cypress_browserstack_tests
+      - cypress_local_tests
+      - cypress_browserstack_tests:
+          requires:
+            - cypress_local_tests
