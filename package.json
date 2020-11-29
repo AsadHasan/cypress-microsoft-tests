@@ -2,21 +2,29 @@
   "name": "cypress-microsoft-tests",
   "version": "1.0.0",
   "description": "Testing Microsoft's website with Cypress",
+  "repository": {
+    "type" : "git",
+    "url" : "https://github.com/AsadHasan/cypress-microsoft-tests.git"
+  },  
   "scripts": {
     "cypress:open": "cypress open",
     "check": "prettier --check **/*.ts",
     "fix-ts": "eslint --fix **/*.ts",
     "test": "cypress run --record",
-    "cross-browser-tests": "browserstack-cypress run"
+    "cross-browser-tests": "browserstack-cypress run",
+    "visual-tests": "percy exec -- cypress run",
+    "local-tests": "./run_docker_tests.sh"
   },
   "keywords": [
     "Cypress",
     "Typescript",
-    "Browserstack"
+    "Browserstack",
+    "Percy"
   ],
   "author": "Asad Hasan",
   "license": "MIT",
   "devDependencies": {
+    "@percy/cypress": "^2.3.2",
     "@typescript-eslint/eslint-plugin": "^4.8.2",
     "@typescript-eslint/parser": "^4.8.2",
     "axe-core": "^4.1.1",

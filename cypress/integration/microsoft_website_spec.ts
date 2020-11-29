@@ -2,6 +2,9 @@ describe("Microsoft's homepage", () => {
   it("should be accessible from the internet", () => {
     cy.visit("");
   });
+  it("should pass automated visual inspection", () => {
+    cy.percySnapshot();
+  });
   // TODO: Works locally buit fails on Browserstack. Fix on Browserstack.
   it.skip("should conform to critical a11y accessibility standards", () => {
     cy.injectAxe();
